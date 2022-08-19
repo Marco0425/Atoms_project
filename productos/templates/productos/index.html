@@ -9,11 +9,25 @@
 <body>
     {% csrf_token %}
     <h1>Tabla de productos</h1>
-    <ul>
-    {% for producto in Productos %}
-        <li>{{producto.id}} {{producto.product_name}} {{producto.SKU}} {{producto.tag_product}} {{producto.cost}} {{producto.status}}</li>
-    {% endfor %}
-    </ul>
-        <h1> </h1>
+    <TABLE BORDER>
+        <TR>
+            <TH>ID</TH>
+            <TH>Nombre del producto</TH>
+            <TH>SKU</TH>
+            <TH>Tag del producto</TH>
+            <TH>Costo</TH>
+            <TH>Status</TH>
+        </TR>
+        {% for producto in Productos %}
+        <TR>
+            <TD>{{producto.id}}</TD>
+            <TD>{{producto.product_name}}</TD>
+            <TD>{{producto.SKU}} </TD>
+            <TD>{{producto.tag_product}}</TD>
+            <TD>{{producto.cost}}</TD>
+            <TD>{{producto.status}}</TD>
+        </TR>
+        {% endfor %}
+    </TABLE>
 </body>
 </html>
