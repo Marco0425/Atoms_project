@@ -26,9 +26,10 @@ def reg_data_new(request, *args, **kwargs):
         update_reg = Prodcutos.objects.get(SKU=js['productos']['SKU'])
         update_reg.product_name = js['productos']['product_name']
         update_reg.tag_product = js['productos']['tag_product']
+        #update_reg.image = js['productos']['image']
         update_reg.cost = js['productos']['cost']
         update_reg.status = js['productos']['status']
-        update_reg.save()
+        #update_reg.save()
 
 
         context = {'Menaje':'Registro actualizado'}
@@ -41,6 +42,7 @@ def reg_data_new(request, *args, **kwargs):
                             SKU=js['productos']['SKU'],
                             tag_product=js['productos']['tag_product'],
                             cost=js['productos']['cost'],
+                            #image=js['productos']['image'],
                             status=js['productos']['status'])
 
         context = {'Menaje':'Succes'}
